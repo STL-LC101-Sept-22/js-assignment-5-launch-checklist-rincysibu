@@ -4,16 +4,16 @@
  
 window.addEventListener("load", function() {
     let button = document.getElementById("formSubmit");
+    let div = document.getElementById("faultyItems");
+    div.style.visibility="hidden";
     button.addEventListener("click", function(event){
         let pilotName = document.querySelector("input[name=pilotName]").value;
         let coPilotName = document.querySelector("input[name=copilotName]").value;
         let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
         let cargoMass = document.querySelector("input[name=cargoMass]").value;
-        let div = document.getElementById("faultyItems");
         if(pilotName == "" || coPilotName== "" || fuelLevel == "" || cargoMass== ""){
-            alert("All fields Are Required");
+             alert("All fields Are Required");
         }else{
-            
             formSubmission(document,div,pilotName, coPilotName, fuelLevel, cargoMass);
         }
         event.preventDefault();
